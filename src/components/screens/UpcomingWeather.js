@@ -25,20 +25,15 @@ const UpcomingWeather = (weatherData) => {
   const { wrapper, image } = styles;
   return (
     <SafeAreaView style={wrapper}>
-      <ImageBackground
-        source={require("../../../assets/upcoming-background.jpg")}
-        style={image}
-      >
         <FlatList data={weatherData.weatherData} renderItem={renderItem}/>
         <Text>High</Text>
-      </ImageBackground>
     </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: "royalblue",
+    backgroundColor:"grey"
   },
   headerText: {
     textAlign: "center",

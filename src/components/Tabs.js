@@ -15,7 +15,7 @@ const Tabs = ( {weather} ) => {
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "grey",
           tabBarStyle:{
-            backgroundColor:'black'
+            backgroundColor:'black',
             
           },
           headerStyle:{

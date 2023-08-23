@@ -5,11 +5,11 @@ import { weatherType } from "../utilities/weatherType";
 import moment from 'moment'
 
 const ListItem = (props) => {
-  const { date,temp,item,dateTextWrapper } = styles;
+  const { date,temp,item,dateTextWrapper,shadow } = styles;
   const { dt_txt, min, max, condition } = props;
   return (  
-    <View style={item}>
-      <Feather name={weatherType[condition]?.icon} size={50} color={'white'} />
+    <View style={[item,shadow]}>
+      <Feather name={weatherType[condition]?.icon} size={50} color={weatherType[condition]?.color} />
       <View style={dateTextWrapper}>
         <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
         <Text style={date}>{moment(dt_txt).format('h:mm:ss a')}</Text>
@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    borderWidth: 5,
-    backgroundColor: "pink",
+    borderRadius:15,
+    backgroundColor: "black",
   },
   temp: {
     color: "white",
@@ -40,6 +40,12 @@ const styles = StyleSheet.create({
 
   dateTextWrapper: {
     flexDirection: 'column'
+  },
+  shadow:{
+    shadowColor:"black",
+    shadowOffset:{width:1,height:1},
+    shadowOpacity:0.2,
+    // shadowRadius:3
   }
 });
 
