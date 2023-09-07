@@ -25,8 +25,11 @@ const UpcomingWeather = (weatherData) => {
   const { wrapper, image } = styles;
   return (
     <SafeAreaView style={wrapper}>
-        <FlatList data={weatherData.weatherData} renderItem={renderItem}/>
-        <Text>High</Text>
+        <ImageBackground style={image} source={require('../../../assets/thunderstorm.jpg')}>
+
+          <FlatList data={weatherData.weatherData} renderItem={renderItem}/>
+          <Text>High</Text>
+        </ImageBackground>
     </SafeAreaView>
   );
 };
